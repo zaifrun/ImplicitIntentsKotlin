@@ -33,12 +33,14 @@
         android:text="@string/share_text" />
     <TextView
         android:layout_width="match_parent"
+        android:textSize="22sp"
         android:text="@string/input_text_to_share_below"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/inputText"
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
+        android:textSize="22sp"
         android:background="@android:color/holo_blue_light"
         android:minEms="10"
         android:layout_height="wrap_content"/>

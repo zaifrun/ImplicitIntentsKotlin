@@ -27,28 +27,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun shareText(view: View) {
-        val text = inputText.text.toString()
+        val text = inputText.text.toString() //from EditText
         val sharingIntent = Intent(Intent.ACTION_SEND)
-        sharingIntent.type = "text/plain"
+        sharingIntent.type = "text/plain" //MIME-TYPE
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Shared Data")
         sharingIntent.putExtra(Intent.EXTRA_TEXT, text)
         startActivity(Intent.createChooser(sharingIntent, "Share Using"))
     }
 
     fun showMap(view: View) {
-        val intent = Intent(Intent.ACTION_VIEW,
-                Uri.parse("geo:26.934,-80.106"))
-        val packageManager = packageManager
-        val activities = packageManager.queryIntentActivities(intent,
-                PackageManager.MATCH_DEFAULT_ONLY)
-
-        //Check if we have any apps that can handle the geo urls
-        if (activities.size > 0)
-            startActivity(intent) //yes, start the app chooser.
-        else { //no, notify user about this
-            val toast = Toast.makeText(applicationContext, "No Map Activity registered", Toast.LENGTH_LONG)
-            toast.show()
-        }
+        val intent = Intent(Intent.ACTION_VIEW,Uri.parse("geo:56.119605, 10.158907"))
+        startActivity(intent)
     }
 
     //start the phone chooser.
